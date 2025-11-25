@@ -100,7 +100,7 @@ export default function Page() {
     const signup = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:8080/api/users",
+          `${process.env.NEXT_PUBLIC_API_HOST}/api/users`,
           formData
         );
         alert("Sign up completed.");

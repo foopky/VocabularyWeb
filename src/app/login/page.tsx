@@ -103,7 +103,7 @@ export default function LoginPage() {
     const login = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:8080/api/auth/login",
+          `${process.env.NEXT_PUBLIC_API_HOST}/api/auth/login`,
           formData
         );
         alert("Login completed.");

@@ -202,7 +202,7 @@ export default function WordbookPage({
       // backend returns created shared folder -> merge into state
       if (response?.data) {
         console.log(response.data);
-        setSharedFolders((prev) => [...response.data, ...prev]);
+        setSharedFolders(response.data);
         console.log("fetchSharedFolder response:", response.data);
       }
     } catch (err) {
