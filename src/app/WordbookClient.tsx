@@ -462,10 +462,7 @@ export default function WordbookPage({
   // fetch and show words for a shared folder (opens modal)
   const viewSharedFolderWords = async (sharedFolder: SharedFolder) => {
     // sharedFolder.id shape may vary; support either { folderId } or number
-    const folderId =
-      typeof sharedFolder.id === "object"
-        ? (sharedFolder.id as any).folderId ?? (sharedFolder.id as any)
-        : (sharedFolder.id as any);
+    const folderId = sharedFolder.id.folderId;
     if (!folderId) {
       alert("Invalid shared folder id.");
       return;

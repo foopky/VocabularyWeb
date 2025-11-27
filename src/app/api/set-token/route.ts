@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
   // authToken 설정
   cookieStore.set("authToken", jwt, {
-    httpOnly: false,
+    httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "strict",
     maxAge: 60 * 60 * 24 * 7, // 7일
